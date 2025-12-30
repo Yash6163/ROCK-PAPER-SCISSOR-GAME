@@ -28,7 +28,7 @@ body{
 }
 
 .container button:hover{
-    box-shadow: 0 0 30px #00ffcc;
+    box-shadow: 0 0 30px palevioletred;
     transform: scale(1.08);
     transition: 0.2s;
 }
@@ -48,7 +48,6 @@ th, td{
 tbody tr{
     animation: slideIn 0.4s ease;
 }
-
 @keyframes slideIn{
     from{
         opacity: 0;
@@ -59,7 +58,6 @@ tbody tr{
         transform: translateY(0);
     }
 }
-
 
 #rock{
     margin-right: 20px;
