@@ -1,7 +1,82 @@
 body{
-    margin: 0;                 /* important */
-    height: 100vh;             /* full screen */
+    min-height: 100vh;
+    background: #f4f1ec;
+    background-image: 
+        radial-gradient(circle at 20% 20%, #e0c3fc 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, #8ec5fc 0%, transparent 40%);
     display: flex;
-    justify-content: center;   /* horizontal center */
-    align-items: center;       /* vertical center */
+    flex-direction: column;
+    align-items: center
+}
+
+
+.container button{
+    padding: 16px 36px;
+    font-size: 18px;
+    border-radius: 14px;
+    border: 1px solid rgba(0,0,0,0.15);
+    margin-top:50px;
+
+    background: rgba(255,255,255,0.65);
+    color: #2c2c2c;
+
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.container button:hover{
+    box-shadow: 0 0 30px #00ffcc;
+    transform: scale(1.08);
+    transition: 0.2s;
+}
+table{
+    margin-top:100px;
+    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+th, td{
+    padding: 12px 18px;
+    text-align: center;
+}
+
+tbody tr{
+    animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+#rock{
+    margin-right: 20px;
+}
+#scissor{
+    margin-right: 20px;
+}
+#paper{
+    margin-right: 20px;
+
+}
+.scorecard{
+    display:flex;
+    justify-content:center;
+    margin-top: 20px;
+    padding: 10px;
+}
+.container, .scorecard{
+    backdrop-filter: blur(8px);
 }
