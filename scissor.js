@@ -8,7 +8,7 @@ console.log("hello world");
 function generate_computer(){
     let choice = Math.floor(Math.random()*3);
     if(choice == 1){
-        return "rock";      // 🔧 small fix
+        return "rock";   
     }
     else if(choice == 0){
         return "paper";
@@ -18,13 +18,12 @@ function generate_computer(){
     }
 }
 
-// 🔧 moved outside (STATE)
 let human = 0;
 let computer = 0;
 let rounds = 0;
 
 function playgame(p1){
-
+    let winner="";
     if(rounds === 5){
         alert("Game Over");
         return;
@@ -35,26 +34,32 @@ function playgame(p1){
 
     if(p1.toLowerCase()=="rock" && p2=="scissor"){
         alert("human wins !");
+        winner="human";
         human++;
     }
     else if(p1.toLowerCase()=="paper" && p2=="rock"){
         alert("human wins !");
+        winner="human";
         human++;
     }
     else if(p1.toLowerCase()=="scissor" && p2=="paper"){
         alert("human wins !");
+        winner="human";
         human++;
     }
     else if(p2=="rock" && p1.toLowerCase()=="scissor"){
         alert("computer wins !");
+        winner="computer";
         computer++;
     }
     else if(p2=="paper" && p1.toLowerCase()=="rock"){
         alert("computer wins !");
+        winner="computer";
         computer++;
     }
     else if(p2=="scissor" && p1.toLowerCase()=="paper"){
         alert("computer wins !");
+        winner="computer";
         computer++;
     }
     else{
@@ -63,6 +68,15 @@ function playgame(p1){
 
     alert(`scorecard : human ${human} and computer : ${computer}`);
 
+    const row=document.createElement("tr");
+    const tablebody=document.querySelector("#tablebody");
+    row.innerHTML=`
+        <td>${rounds}</td>
+        <td>${p1}</td>
+        <td>${p2}</td>
+        <td>${winner}</td>
+    `
+    tablebody.appendChild(row);
     //  final result check
     if(rounds === 5){
         if(human > computer){
@@ -76,7 +90,6 @@ function playgame(p1){
         }
     }
 }
-
 
 const rock = document.querySelector("#rock");
 rock.addEventListener("click", () => {
